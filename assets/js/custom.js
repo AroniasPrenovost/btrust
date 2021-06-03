@@ -54,6 +54,7 @@
         $('html,body').animate({
           scrollTop: (target.offset().top) + 1
         }, 700);
+        window.history.pushState({}, document.title, '/'); // fixes issue w/ appended [Object object] in URL. * Check if error is thrown on PROD 
         return false;
       }
     }
@@ -66,7 +67,6 @@
       $('.scroll-to-section a[href^="#"]').on('click', function (e) {
           e.preventDefault();
           $(document).off("scroll");
-          
           $('.scroll-to-section a').each(function () {
               $(this).removeClass('active');
           })
