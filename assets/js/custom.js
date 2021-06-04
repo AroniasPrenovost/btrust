@@ -2,6 +2,8 @@
 	
 	"use strict";
 
+  var section_name; 
+
 	// Header Type = Fixed
   $(window).scroll(function() {
     var scroll = $(window).scrollTop();
@@ -78,7 +80,7 @@
           $('html, body').stop().animate({
               scrollTop: (target.offset().top) + 1
           }, 500, 'swing', function () {
-              window.location.hash = target;
+              window.location.hash = target[0].id; // results in ...#about, ...#home, etc. 
               $(document).on("scroll", onScroll);
           });
       });
@@ -86,7 +88,6 @@
 
   function onScroll(event){
       var scrollPos = $(document).scrollTop();
-
       $('.nav a').each(function () {
           var currLink = $(this);
           var refElement = $(currLink.attr("href"));
