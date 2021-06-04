@@ -54,7 +54,7 @@
         $('html,body').animate({
           scrollTop: (target.offset().top) + 1
         }, 700);
-        window.history.pushState({}, document.title, '/'); // fixes issue w/ appended [Object object] in URL. * Check if error is thrown on PROD 
+        // window.history.pushState({}, document.title, '/'); // fixes issue w/ appended [Object object] in URL. * Check if error is thrown on PROD 
         return false;
       }
     }
@@ -86,6 +86,7 @@
 
   function onScroll(event){
       var scrollPos = $(document).scrollTop();
+
       $('.nav a').each(function () {
           var currLink = $(this);
           var refElement = $(currLink.attr("href"));
