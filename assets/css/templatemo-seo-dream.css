@@ -766,7 +766,7 @@ news ticker
   white-space: nowrap;
   padding-right: 100%;
   animation-timing-function: linear;
-  animation: ticker 40s infinite;
+  animation: ticker 75s infinite;
 }
 
 .ticker-move:hover {
