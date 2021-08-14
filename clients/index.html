@@ -66,8 +66,8 @@ https://templatemo.com/tm-563-seo-dream
               <li class="scroll-to-section"><a href="../#process">Process</a></li>
               <!--<li class="scroll-to-section"><a href="../#services">Services</a></li>-->
               <li class="scroll-to-section"><a href="#careers">Careers</a></li> 
-                                <li class="scroll-to-section"><a class="active" href="/clients">Clients</a></li> 
-              <li class="scroll-to-section"><a href="../blog">Market News</a></li>
+              <li class="scroll-to-section"><a class="active" href="/clients">Clients</a></li> 
+              <li class="scroll-to-section"><a href="../blog/">Market News</a></li>
               <!-- <li class="scroll-to-section"><a href="../#contact">Contact Us</a></li>  --> 
               <li class="scroll-to-section"><div class="main-blue-button"><a href="/#contact">Contact Us</a></div></li> 
             </ul>        
@@ -712,6 +712,8 @@ https://templatemo.com/tm-563-seo-dream
               </div>
               <div class="col-lg-12">
                 <div class="row">
+
+                  <p id='invalid_credentials' style='display:none;padding-bottom:5px;color:#e74c3c;text-align:left'>* Invalid email and password combination</p>
             
                   <div class="col-lg-6">
                     <fieldset>
@@ -765,6 +767,23 @@ https://templatemo.com/tm-563-seo-dream
       </div>
     </div>
   </div>
+
+  <script>
+    document.getElementById('form-submit').addEventListener('click', function() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var access = (email === 'jocko21@aol.com' && password === '12309876') ? true : false;
+
+      // route to portal 
+      if (access) {
+
+      // add some message over the form
+      } else {
+        document.getElementById('invalid_credentials').style.display = 'block';
+      }
+    });
+
+  </script>
 
   <footer>
     <div class="container">
